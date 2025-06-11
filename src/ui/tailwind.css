@@ -4,3 +4,12 @@
   --color-light: hsl(0, 0%, 90%);
   --color-dark: hsl(0, 0%, 10%);
 }
+
+@layer base {
+  .auth-form-input {
+    @apply border-light w-[90%] border-2 px-3 py-2 outline-none;
+  }
+  .auth-form-button {
+    @apply bg-light text-dark w-full px-3 py-2 text-center text-lg font-bold;
+  }
+}
