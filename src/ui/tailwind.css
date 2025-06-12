@@ -7,9 +7,9 @@
 
 @layer base {
   .auth-form-input {
-    @apply border-light w-[90%] border-2 px-3 py-2 outline-none;
+    @apply border-light focus:bg-light focus:text-dark focus:border-dark w-[90%] border-2 px-3 py-2 duration-300 outline-none focus:border-2 focus:font-bold;
   }
   .auth-form-button {
-    @apply bg-light text-dark w-full px-3 py-2 text-center text-lg font-bold;
+    @apply bg-light text-dark w-full px-3 py-2 text-center text-sm font-bold;
   }
 }
