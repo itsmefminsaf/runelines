@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="en">
-      <body className="bg-light text-dark">
+      <body className="bg-background text-accent">
         <Nav />
         {children}
         <BottomNav />

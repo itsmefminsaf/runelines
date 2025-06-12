@@ -15,7 +15,7 @@ const SignInPage = () => {
   return (
     <form
       action={action}
-      className="bg-dark flex w-60 max-w-4/5 flex-col items-center gap-2 py-5 text-white"
+      className="bg-accent text-background flex w-60 max-w-4/5 flex-col items-center gap-2 py-5"
     >
       <input
         required
