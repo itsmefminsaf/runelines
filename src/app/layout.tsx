@@ -1,4 +1,5 @@
 import Nav from "@/ui/components/Nav";
+import BottomNav from "@/ui/components/BottomNav";
 import "@/ui/tailwind.css";
 import { Metadata } from "next";
 
@@ -15,6 +16,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
       <body className="bg-light text-dark">
         <Nav />
         {children}
+        <BottomNav />
       </body>
     </html>
   );

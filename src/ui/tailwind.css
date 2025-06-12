@@ -12,4 +12,7 @@
   .auth-form-button {
     @apply bg-light text-dark w-full px-3 py-2 text-center text-sm font-bold;
   }
+  .nav-items {
+    @apply flex flex-col items-center justify-evenly gap-1 text-[0.6rem];
+  }
 }
