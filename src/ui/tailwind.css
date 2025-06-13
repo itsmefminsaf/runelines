@@ -1,28 +1,18 @@
 @import "tailwindcss";
 
-:root {
-  --background: hsl(0, 0%, 90%);
-  --accent: hsl(0, 0%, 10%);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: hsl(0, 0%, 10%);
-    --accent: hsl(0, 0%, 90%);
-  }
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-background: var(--background);
-  --color-accent: var(--accent);
+  --color-dark: hsl(0, 0%, 10%);
+  --color-light: hsl(0, 0%, 90%);
 }
 
 @layer base {
   .auth-form-input {
-    @apply border-background focus:bg-background focus:text-accent focus:border-accent w-[90%] border-2 px-3 py-2 duration-300 outline-none focus:border-2 focus:font-bold;
+    @apply border-light dark:border-dark dark:focus:bg-dark dark:focus:text-light dark:focus:border-light focus:bg-light focus:text-dark focus:border-dark w-[90%] border-2 px-3 py-2 duration-300 outline-none focus:border-2 focus:font-bold;
   }
   .auth-form-button {
-    @apply bg-background text-accent w-full px-3 py-2 text-center text-sm font-bold;
+    @apply bg-light dark:bg-dark text-dark dark:text-light w-full px-3 py-2 text-center text-sm font-bold;
   }
   .nav-items {
     @apply flex flex-col items-center justify-evenly gap-1 text-[0.6rem] font-bold;

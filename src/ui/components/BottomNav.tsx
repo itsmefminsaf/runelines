@@ -7,10 +7,11 @@ import { IoPeople } from "react-icons/io5";
 
 const BottomNav = async () => {
   const verifiedUser = await getSession();
+
   if (!verifiedUser) return null;
 
   return (
-    <nav className="bg-accent text-background fixed bottom-0">
+    <nav className="bg-dark dark:bg-light text-light dark:text-dark fixed bottom-0">
       <ul className="flex h-16 w-screen items-center justify-evenly">
         <Link href="/" className="nav-items">
           <BiHome className="size-6" />
@@ -22,7 +23,7 @@ const BottomNav = async () => {
         </Link>
         <Link
           href="/settings"
-          className="nav-items bg-accent border-background relative bottom-4 rounded-full border-4 p-3"
+          className="nav-items bg-dark dark:bg-light border-light dark:border-dark relative bottom-4 rounded-full border-4 p-3"
         >
           <FaPlus className="size-8 stroke-2" />
         </Link>
