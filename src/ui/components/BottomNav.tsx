@@ -1,4 +1,4 @@
-import getSession from "@/lib/getSession";
+import getUserData from "@/lib/getUserData";
 import Link from "next/link";
 import { BiBook, BiHome } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
@@ -6,9 +6,8 @@ import { FaPlus } from "react-icons/fa";
 import { IoPeople } from "react-icons/io5";
 
 const BottomNav = async () => {
-  const verifiedUser = await getSession();
-
-  if (!verifiedUser) return null;
+  const user = await getUserData(["name"]);
+  if (!user) return null;
 
   return (
     <nav className="bg-dark dark:bg-light text-light dark:text-dark fixed bottom-0">
