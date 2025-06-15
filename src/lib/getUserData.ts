@@ -1,3 +1,5 @@
+"use server";
+
 import dbConnect from "@/db/db";
 import User from "@/db/models/users";
 import redis from "@/db/redis";
