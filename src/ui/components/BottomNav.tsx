@@ -22,7 +22,7 @@ const BottomNav = async () => {
               Collection
             </Link>
             <Link
-              href="/settings"
+              href="/new-poem"
               className="nav-items bg-dark dark:bg-light border-light dark:border-dark relative bottom-4 rounded-full border-4 p-3"
             >
               <FaPlus className="size-8 stroke-2" />
