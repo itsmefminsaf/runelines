@@ -31,7 +31,7 @@ const BottomNav = async () => {
               <IoPeople className="size-6" />
               People
             </Link>
-            <Link href="/profile" className="nav-items">
+            <Link href="/people/me" className="nav-items">
               <CgProfile className="size-6" />
               Profile
             </Link>
