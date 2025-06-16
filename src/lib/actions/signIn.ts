@@ -11,12 +11,12 @@ const SignIn = async (
   prevState: SignUpFormType | undefined,
   formData: FormData,
 ) => {
-  const email = formData.get("email") as string;
+  const uname = formData.get("uname") as string;
   const password = formData.get("password") as string;
 
   try {
     await dbConnect();
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ uname });
 
     if (!existingUser) {
       return {
@@ -31,22 +31,22 @@ const SignIn = async (
 
     if (!correctPassword) {
       return {
-        email,
+        uname,
         error: "Incorrect password",
       };
     }
 
-    const session = await createSession(email);
+    const session = await createSession(uname);
 
     await User.updateOne(
-      { email },
+      { uname },
       { sessions: [...existingUser.sessions, session] },
     );
   } catch (error) {
     console.log("Error in signup action: ", error);
 
     return {
-      email,
+      uname,
       password,
       error: "something went wrong, please try again later.",
     };

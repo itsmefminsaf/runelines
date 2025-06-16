@@ -9,7 +9,7 @@ const Poem = async ({ poemId }: { poemId: string }) => {
   const date = poem.createdAt.toLocaleDateString();
   const time = poem.createdAt.toLocaleTimeString();
 
-  const user = await getUserData(["name", "profile", "email"], poem.user);
+  const user = await getUserData(["name", "profile", "uname"], poem.user);
 
   return (
     <main className="p-5">
@@ -31,7 +31,7 @@ const Poem = async ({ poemId }: { poemId: string }) => {
           )}
         </div>
         <h2 className="pl-3 text-lg font-bold">{user?.name}</h2>
-        <h4 className="pl-4 text-xs">{user?.email}</h4>
+        <h4 className="pl-4 text-xs">{user?.uname}</h4>
       </Link>
       <p className="bg-dark dark:bg-light text-light dark:text-dark rounded-2xl border-2 p-3">
         {poem.poem}

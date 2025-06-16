@@ -11,8 +11,8 @@ const NewPoemPage = () => {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      const userData = await getUserData(["email"]);
-      setUser(userData?.email ?? "");
+      const userData = await getUserData(["uname"]);
+      setUser(userData?.uname ?? "");
     };
     fetchUserData();
   }, []);

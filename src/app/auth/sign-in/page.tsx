@@ -7,7 +7,7 @@ import React, { useActionState } from "react";
 
 const SignInPage = () => {
   const initialState: SignInFormType = {};
-  const [{ email, password, error }, action, isPending] = useActionState(
+  const [{ uname, password, error }, action, isPending] = useActionState(
     SignIn,
     initialState,
   );
@@ -19,11 +19,11 @@ const SignInPage = () => {
     >
       <input
         required
-        name="email"
-        type="email"
-        placeholder="E-mail"
+        name="uname"
+        type="name"
+        placeholder="User name"
         className="auth-form-input"
-        defaultValue={email}
+        defaultValue={uname}
       />
       <input
         required

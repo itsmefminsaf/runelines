@@ -7,7 +7,7 @@ import { useActionState } from "react";
 
 const SignUpPage = () => {
   const initialState: SignUpFormType = {};
-  const [{ name, email, password, confirmPassword, error }, action, isPending] =
+  const [{ name, uname, password, confirmPassword, error }, action, isPending] =
     useActionState(SignUp, initialState);
 
   return (
@@ -25,11 +25,11 @@ const SignUpPage = () => {
       />
       <input
         required
-        name="email"
-        type="email"
-        placeholder="E-mail"
+        name="uname"
+        type="name"
+        placeholder="User name"
         className="auth-form-input"
-        defaultValue={email}
+        defaultValue={uname}
       />
       <input
         required

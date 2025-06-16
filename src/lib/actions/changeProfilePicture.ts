@@ -12,8 +12,8 @@ cloudinary.config({
 
 const changeProfilePicture = async (formData: FormData) => {
   const image = formData.get("image") as File;
-  const email = formData.get("email");
-  if (!image || !email) throw new Error("Required field are not given");
+  const uname = formData.get("uname");
+  if (!image || !uname) throw new Error("Required field are not given");
 
   try {
     const arrayBuffer = await image.arrayBuffer();
@@ -27,7 +27,7 @@ const changeProfilePicture = async (formData: FormData) => {
     await dbConnect();
 
     await User.findOneAndUpdate(
-      { email },
+      { uname },
       { profile: cloudinaryResponse.secure_url },
     );
     return true;

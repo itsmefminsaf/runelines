@@ -12,36 +12,36 @@ const SignUp = async (
   formData: FormData,
 ) => {
   const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
+  const uname = formData.get("uname") as string;
   const password = formData.get("password") as string;
   const confirmPassword = formData.get("confirmPassword") as string;
 
   if (password !== confirmPassword) {
     return {
       name,
-      email,
+      uname,
       error: "Passwords do not match.",
     };
   }
 
   try {
     await dbConnect();
-    const existingUser = await User.find({ email });
+    const existingUser = await User.find({ uname });
 
     if (existingUser.length !== 0) {
       return {
         name,
-        error: "Email is already used",
+        error: "User name is already taken",
       };
     }
 
     const hashedPassword = await hashPassword(password);
 
-    const session = await createSession(email);
+    const session = await createSession(uname);
 
     const newUser = new User({
       name,
-      email,
+      uname,
       password: hashedPassword,
       sessions: [session],
     });
@@ -52,7 +52,7 @@ const SignUp = async (
 
     return {
       name,
-      email,
+      uname,
       password,
       confirmPassword,
       error: "something went wrong, please try again later.",

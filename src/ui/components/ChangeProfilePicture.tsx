@@ -13,10 +13,10 @@ const ChangeProfilePicture = ({ children }: { children: React.ReactNode }) => {
     const formData = new FormData();
     formData.append("image", image);
 
-    const user = await getUserData(["email"]);
+    const user = await getUserData(["uname"]);
 
-    if (user?.email) {
-      formData.append("email", user.email);
+    if (user?.uname) {
+      formData.append("uname", user.uname);
     }
 
     const success = await changeProfilePicture(formData);

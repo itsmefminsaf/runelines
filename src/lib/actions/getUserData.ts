@@ -8,22 +8,24 @@ import { cookies } from "next/headers";
 
 const getUserData = async <K extends keyof UserType>(
   requestedFields: K[],
-  userEmail: string = "",
+  uname: string = "",
 ): Promise<Pick<UserType, K> | null> => {
-  let email;
-  if (userEmail) {
-    email = userEmail;
+  let _id;
+  if (uname) {
+    _id = uname;
   } else {
     const session = (await cookies()).get("session")?.value;
     if (!session) return null;
 
-    const emailFromRedis = await redis.get(session);
-    if (!emailFromRedis) return null;
-    email = emailFromRedis;
+    const uname = await redis.get(session);
+    if (!uname) return null;
+    _id = uname;
   }
 
   await dbConnect();
-  const user = await User.findOne({ email }).lean();
+  console.log(_id);
+
+  const user = await User.findOne({ uname: _id });
 
   if (!user) return null;
 

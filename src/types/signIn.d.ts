@@ -1,5 +1,5 @@
 export type SignInFormType = {
-  email?: string;
+  uname?: string;
   password?: string;
   error?: string;
 };
