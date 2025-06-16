@@ -52,7 +52,7 @@ const SignIn = async (
     };
   }
 
-  return redirect("/");
+  return redirect("/people/me?welcome=true");
 };
 
 export default SignIn;
