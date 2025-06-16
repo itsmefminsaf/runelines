@@ -14,7 +14,7 @@ const Poem = async ({ poemId }: { poemId: string }) => {
   return (
     <main className="p-5">
       <Link
-        href={poem.user}
+        href={`/people/${poem.user}`}
         className="mb-3 grid grid-cols-[3rem_1fr] grid-rows-2"
       >
         <div className="row-span-2 size-12">
