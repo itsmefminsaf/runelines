@@ -1,4 +1,4 @@
-import getUserData from "@/lib/getUserData";
+import getUserData from "@/lib/actions/getUserData";
 import Link from "next/link";
 import { BiBook, BiHome } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";

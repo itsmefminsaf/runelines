@@ -1,4 +1,4 @@
-import getUserData from "@/lib/getUserData";
+import getUserData from "@/lib/actions/getUserData";
 import ProfilePhoto from "@/ui/components/ProfilePhoto";
 import userProfile from "@/assets/user.png";
 import ChangeProfilePicture from "@/ui/components/ChangeProfilePicture";

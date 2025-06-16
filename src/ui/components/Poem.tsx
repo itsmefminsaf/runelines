@@ -1,8 +1,8 @@
-import getPoem from "@/lib/getPoem";
+import getPoem from "@/lib/actions/getPoem";
 import Image from "next/image";
 import Link from "next/link";
 import { BiUser } from "react-icons/bi";
-import getUserData from "@/lib/getUserData";
+import getUserData from "@/lib/actions/getUserData";
 
 const Poem = async ({ poemId }: { poemId: string }) => {
   const poem = await getPoem(poemId);

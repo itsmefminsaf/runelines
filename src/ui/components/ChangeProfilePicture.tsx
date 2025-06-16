@@ -1,7 +1,7 @@
 "use client";
 
 import changeProfilePicture from "@/lib/actions/changeProfilePicture";
-import getUserData from "@/lib/getUserData";
+import getUserData from "@/lib/actions/getUserData";
 import { useRouter } from "next/navigation";
 import { ChangeEvent } from "react";
 

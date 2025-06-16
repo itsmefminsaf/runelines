@@ -1,7 +1,7 @@
 "use client";
 
 import newPoemPost from "@/lib/actions/newPoemPost";
-import getUserData from "@/lib/getUserData";
+import getUserData from "@/lib/actions/getUserData";
 import { PoemFormStateType } from "@/types/poem";
 import { useActionState, useEffect, useState } from "react";
 import { BsMagic } from "react-icons/bs";
